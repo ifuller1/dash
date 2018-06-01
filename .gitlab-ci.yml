@@ -1,0 +1,13 @@
+deploy:
+  image: python:latest
+  script:
+  - pip install awscli
+  - aws s3 ls s3://dash-website
+  - aws s3 cp ./favicon.ico s3://dash-website/
+  - aws s3 cp ./index.html s3://dash-website/
+  - aws s3 cp ./manifest.json s3://dash-website/
+  - aws s3 cp ./worker.js s3://dash-website/
+  - aws s3 cp ./build s3://dash-website/build --recursive
+  - aws s3 cp ./assets s3://dash-website/assets --recursive
+  only:
+    - master

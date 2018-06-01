@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dash - the route checker</title>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf9ff">
+</head>
+
+<body>
+  <div id="index"></div>
+  <!-- <%= JSON.stringify(htmlWebpackPlugin) %> -->
+  <script src="<%= htmlWebpackPlugin.files.chunks['index'].entry %>" type="text/javascript"></script>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register(
+        'worker.js',
+        {
+          scope: '/',
+        },
+      )
+        .then(reg => console.log('Worker registration success', reg))
+        .catch(err => console.log('Worker registration FAILED', err));
+    }
+  </script>
+</body>
+
+</html>

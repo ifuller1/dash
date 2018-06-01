@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dash - the route checker</title>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf9ff">
+</head>
+
+<body>
+  <div id="index"></div>
+  <!-- {"files":{"publicPath":"build/","chunks":{"worker":{"size":1597,"entry":"build/../worker.js","hash":"b2cf82a9cd86b6c57fcd","css":[]},"index":{"size":1336506,"entry":"build/index.5e0f80de7271a7ae9d73.js","hash":"5e0f80de7271a7ae9d73","css":[]}},"js":["build/../worker.js","build/index.5e0f80de7271a7ae9d73.js"],"css":[]},"options":{"template":"/Users/ianfuller/Snapchat/Dev/ReasonML/node_modules/html-webpack-plugin/lib/loader.js!/Users/ianfuller/Snapchat/Dev/ReasonML/template.html","filename":"../index.html","hash":false,"inject":false,"compile":true,"favicon":false,"minify":false,"cache":true,"showErrors":true,"chunks":"all","excludeChunks":[],"meta":{},"title":"Webpack App","xhtml":false}} -->
+  <script src="build/index.5e0f80de7271a7ae9d73.js" type="text/javascript"></script>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register(
+        'worker.js',
+        {
+          scope: '/',
+        },
+      )
+        .then(reg => console.log('Worker registration success', reg))
+        .catch(err => console.log('Worker registration FAILED', err));
+    }
+  </script>
+</body>
+
+</html>

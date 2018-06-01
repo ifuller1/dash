@@ -1,0 +1,38 @@
+{
+  "name": "Dash",
+  "version": "1.5",
+  "scripts": {
+    "build": "bsb -make-world && webpack --config webpack.prod.js",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "server": "http-server ./ -p 9000",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack -w --config webpack.dev.js"
+  },
+  "keywords": [
+    "Dash, ReasonML, Bucklescript, PWA"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bs-css": "^6.7.0",
+    "bs-fetch": "^0.2.1",
+    "bs-json": "^1.0.1",
+    "bs-webworkers": "^0.2.4",
+    "chunk-rename-webpack-plugin": "^1.1.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "reason-browser-persist": "^1.0.2",
+    "reason-react": ">=0.4.1",
+    "sw-cache-plugin": "^0.1.2",
+    "webpack-merge": "^4.1.2"
+  },
+  "devDependencies": {
+    "bs-platform": "^2.2.0",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.12"
+  }
+}

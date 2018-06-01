@@ -1,0 +1,46 @@
+{
+    "name": "Dash",
+    "short_name": "Dash",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#edf9ff",
+    "theme_color": "#edf9ff",
+    "description": "A basic A -> B route planner with offline sync and fast route ordering.",
+    "icons": [
+        {
+            "src": "assets/icons/homescreen48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/homescreen72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/homescreen96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/homescreen144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/homescreen168.png",
+            "sizes": "168x168",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/homescreen192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/homescreen512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
