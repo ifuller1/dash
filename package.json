@@ -1,6 +1,6 @@
 {
-  "name": "Dash",
-  "version": "1.5",
+  "name": "dash",
+  "version": "2.0.0",
   "scripts": {
     "build": "bsb -make-world && webpack --config webpack.prod.js",
     "start": "bsb -make-world -w",
