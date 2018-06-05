@@ -1,14 +1,14 @@
 importScripts('/build/AssetsManager.js');
 const assetsManager = new AssetsManager();
 // use the page.js hash as the cache key
-const releaseVersion = "1.2.3";
+const releaseVersion = "2.0.1";
 const cacheName = assetsManager.hashes[0] + releaseVersion;
 
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(cacheName)
             .then(cache => {
-                console.log('Opened cache for:', __webpack_hash__, assetsManager.cacheEntries);
+                console.log('Opened cache for:', cacheName, assetsManager.cacheEntries);
                 return cache.addAll(assetsManager.cacheEntries);
             })
     );
@@ -24,11 +24,11 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-    console.log('fetch request', __webpack_hash__, event.request.url);
+    console.log('fetch request', cacheName, event.request.url);
     event.respondWith(
         caches.match(event.request)
             .then(function (response) {
-                console.log('cache match', __webpack_hash__);
+                console.log('cache match', cacheName);
                 if (response) {
                     console.log('cache response', event.request);
                     return response;
